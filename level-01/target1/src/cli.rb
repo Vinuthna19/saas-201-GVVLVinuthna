@@ -1,13 +1,18 @@
 # Please use require_relative for requiring any dependencies
 require_relative './application'
+require_relative './Department'
 
 # The Main application that will be running your code
+def cls
+  system 'cls'
+end
+
 def main_display
-  puts "Please choose the action you would like to perform?" \
-  "\n1. Enroll into a department" \
-  "\n2. Change your department" \
-  "\n3. Change your section" \
-  "\n4. View details"
+  puts "Please choose the action you would like to perform?" 
+  puts "\n1. Enroll into a department" 
+  puts "\n2. Change your department" 
+  puts "\n3. Change your section" 
+  puts "\n4. View details" 
 end
 
 def common_question_1
@@ -15,25 +20,25 @@ def common_question_1
 end
 
 def common_question_2
-  puts "Please select your department from the given choices?" \
-  "\nEEE" \
-  "\nMECH" \
-  "\nCSE" \
-  "\nCIVIL"
+  puts "Please select your department from the given choices?" 
+  puts "\nEEE" 
+  puts "\nMECH"
+  puts "\nCSE" 
+  puts "\nCIVIL"
 end
 
 def section_question_3
-  puts "Please select your section from the given choices?" \
-  "\nA" \
-  "\nB" \
-  "\nC" \
+  puts "Please select your section from the given choices?" 
+  puts "\nA" 
+  puts "\nB"
+  puts "\nC"
 end
 
 def details_view_options
-  puts "Please choose the details you would like to get?" \
-  "\n1. List all students in a department" \
-  "\n2. List all students in a section" \
-  "\n3. List details of a student"
+  puts "Please choose the details you would like to get?" 
+  puts "\n1. List all students in a department" 
+  puts "\n2. List all students in a section" 
+  puts "\n3. List details of a student"
 end
 
 application = Application.new
@@ -73,13 +78,11 @@ loop do
       student_dept = gets.chomp
       section_question_3
       section = gets.chomp
-      puts papplication.section_view student_dept, section
+      puts application.section_view student_dept, section
     when 3
       common_question_1
       student_name = gets.chomp
       puts application.student_details student_name
     end
   end
-  puts 'Press any key to go back'
-  gets
 end
